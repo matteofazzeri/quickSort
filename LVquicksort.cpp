@@ -13,11 +13,12 @@ void LVquicksort(vector<int>& v, int low, int high, int& nComp) {
         LVquicksort(v, pIndex+1, high, nComp);
     }
     
+    //printVec(v);
 }
 
 int Partition(vector<int>& v, int start, int end, int& nComp) {
     int index=start;
-    int pivot = end;
+    int pivot=end;
 
     for(int i=start; i<end; i++) {
         // finding index of pivot.

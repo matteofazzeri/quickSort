@@ -1,6 +1,8 @@
 #include "apa.h"
 #include <chrono>
 
+using namespace chrono;
+
 vector<int> APA(const string fileName) {
     vector<int> nComp;
     vector<int> vec;
@@ -18,9 +20,15 @@ vector<int> APA(const string fileName) {
 
 int main(int argc, char *argv[])
 {
+    auto start = high_resolution_clock::now();
+
     srand(time(NULL));
     createFile(argv[1]);
-    
     createFileFromVec("results.txt", APA(argv[1]));
+    
+    auto duration = duration_cast<microseconds>(high_resolution_clock::now() - start);
+    
+    cout << duration.count() << endl;
+
     return 0;
 }
