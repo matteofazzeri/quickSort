@@ -1,4 +1,6 @@
 #include "apa.h"
+#include <unistd.h>
+
 
 void swap(int& a, int& b) {
     int temp = a;
@@ -24,4 +26,10 @@ void random_shuffle(vector<int>& v) {
       v[i] = v[j];
       v[j] = temp;
    }
+}
+
+
+bool fileExists(const char *fileName) {
+   std::ifstream infile(fileName);
+   return infile.good();
 }

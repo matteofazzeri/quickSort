@@ -22,6 +22,7 @@ void createFileFromVec(const string, vector<int>);
 void swap(int&, int&);
 void printVec(vector<int>);
 void random_shuffle(vector<int>&);
+bool fileExists(const char*);
 
 /********* auxFunction.cpp *********/
 void LVquicksort(vector<int>&, int, int, int&);
