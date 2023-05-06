@@ -18,4 +18,4 @@ $(EXE): $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 clean:
-	rm $(OBJ) $(EXE) $(INPUTFILE) $(OUTPUTFILE) plot.png
+	rm $(OBJ) $(EXE) $(OUTPUTFILE) plot.png

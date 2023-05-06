@@ -28,11 +28,13 @@ vector<int> APA(const string fileName) {
     
     vector<int> nComp;
     vector<int> vec;
-    readFile(vec, fileName);
+    //readFile(vec, fileName);
 
-    random_shuffle(vec);    // shuffle the vector in a random way
+    for(int i=0; i<10000; i++)
+        vec.push_back(i);
 
-    for(int  i = 0; i < MAX_REPETITIONS; i++) { 
+    for(int  i = 0; i < MAX_REPETITIONS; i++) {
+        random_shuffle(vec);    // shuffle the vector in a random way
         nComp.push_back(0);
         LVquicksort(vec, 0, vec.size() - 1, nComp[i]);
     }
@@ -46,10 +48,13 @@ int main(int argc, char *argv[])
     
     srand(time(NULL));
     auto start = high_resolution_clock::now();
-    
+    /*
     if(!fileExists(argv[1]))
         createFile(argv[1]);
-    
+    */
+
+
+
     vector<int> rep = APA(argv[1]);
 
     createFileFromVec("results.txt", rep);

@@ -18,10 +18,11 @@ void printVec(vector<int> v) {
 
 //function to shuffle the array elements into random positions
 void random_shuffle(vector<int>& v) {
+   int size = v.size()-1;
    //function to shuffle the array elements into random positions
    srand(time(NULL));
-   for (int i = v.size() - 1; i > 0; i--) {
-      int j = rand()%(i + 1);
+   for (int i = size; i >= 0; i--) {
+      int j = rand()%(size);
       int temp = v[i];
       v[i] = v[j];
       v[j] = temp;
