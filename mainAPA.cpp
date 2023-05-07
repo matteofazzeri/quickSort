@@ -20,6 +20,7 @@ double standardEmpiricalDeviation(vector<int> values, double mediumValue) {
     
     for(int i = 0; i < MAX_REPETITIONS; i++)
         sum += pow(values[i]-mediumValue, 2);
+        
     return sum / (MAX_REPETITIONS-1);
 
 }
