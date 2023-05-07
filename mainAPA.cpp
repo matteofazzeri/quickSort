@@ -24,13 +24,13 @@ double standardEmpiricalDeviation(vector<int> values, double mediumValue) {
 
 }
 
-vector<int> APA(const string fileName) {
+vector<int> APA() {
     
     vector<int> nComp;
     vector<int> vec;
     //readFile(vec, fileName);
 
-    for(int i=0; i<10000; i++)
+    for(int i=0; i<ARRAY_SIZE; i++)
         vec.push_back(i);
 
     for(int  i = 0; i < MAX_REPETITIONS; i++) {
@@ -46,25 +46,49 @@ vector<int> APA(const string fileName) {
 int main(int argc, char *argv[])
 {
     
+    if(fileExists(argv[1])) {
+        cout << "The file " << argv[1] << " already exists.\n"
+             << "Do you want to delete it and run again? [Y/N] ";
+        char response=0;
+        cin >> response;
+
+        switch (response)
+        {
+        case 'Y': case 'y':
+            system("make clean");
+            system("clear");
+            cout << "Ready for execute the program again.\n";
+            cout << "Click any key to continue...\n";
+            getchar();
+            getchar();
+            system("pause");
+            system("make");
+            return 0;
+        break;
+        case 'N': case 'n':
+            return 0;
+        break;
+        default:
+            break;
+        }
+
+    }
+
     srand(time(NULL));
     auto start = high_resolution_clock::now();
-    /*
-    if(!fileExists(argv[1]))
-        createFile(argv[1]);
-    */
 
+    vector<int> rep = APA();
 
-
-    vector<int> rep = APA(argv[1]);
-
-    createFileFromVec("results.txt", rep);
+    createFileFromVec(argv[1], rep);
 
     double Vmedio = valoreMedio(rep);
     cout << "Valore medio -> " << Vmedio << endl;
-    cout << "Deviazione standard empirica" << standardEmpiricalDeviation(rep, Vmedio) << endl;
+    cout << "Deviazione standard empirica -> " << standardEmpiricalDeviation(rep, Vmedio) << endl;
+
+    system("python3 plot.py");
 
     auto duration = duration_cast<seconds>(high_resolution_clock::now() - start);
-    cout << duration.count()/60 << endl;
+    cout << (double)duration.count()/60 << endl;
     return 0;
 
 }

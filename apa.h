@@ -31,6 +31,7 @@ int Partition(vector<int>&, int, int, int&);
 
 /********* Global Constants *********/
 const int MAX_REPETITIONS = 100000;
+const int ARRAY_SIZE = 10000;
 
 
 #endif

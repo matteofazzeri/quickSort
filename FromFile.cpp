@@ -60,8 +60,8 @@ void createFile(const string fileName) {
     ofstream myFile(fileName);
 
     // Write to the file
-    for(int i = 0; i <10000; i++) {
-        myFile << rand()%10000+1;
+    for(int i = 0; i <ARRAY_SIZE; i++) {
+        myFile << rand()%ARRAY_SIZE+1;
         myFile << "\n";
     }
 

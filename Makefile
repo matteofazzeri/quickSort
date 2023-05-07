@@ -2,13 +2,11 @@ CC=g++
 CFLAGS=-I.
 DEPS = apa.h
 OBJ = mainAPA.o FromFile.o auxFunction.o LVquicksort.o
-INPUTFILE = quicksortTest.txt
 OUTPUTFILE = results.txt
 EXE = toRun
 
 run: $(EXE)
-	./$^ $(INPUTFILE)
-	python3 plot.py
+	./$^ $(OUTPUTFILE)
 
 %.o: %.c $(DEPS)
 	clean
