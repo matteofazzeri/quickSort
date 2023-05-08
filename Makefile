@@ -9,7 +9,6 @@ run: $(EXE)
 	./$^ $(OUTPUTFILE)
 
 %.o: %.c $(DEPS)
-	clean
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(EXE): $(OBJ)
