@@ -18,5 +18,5 @@ plot.gca().set(title='|S|=10^4 , Run=10^5', xlabel='Confronti', ylabel='Run')
 
 
 
-plot.savefig('Plot.png')
+plot.savefig('./Exported/Plot.png')
 plot.close()
