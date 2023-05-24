@@ -84,7 +84,3 @@ void createFileFromVec(const string fileName, vector<int> nComp) {
     // Close the file
     myFile.close();
 }
-
-
-// function to edit an existing file
-void editFile(const string fileName);

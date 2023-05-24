@@ -8,7 +8,7 @@
 #include <time.h>
 #include <fstream>
 #include <sstream>
-
+#include <algorithm>
 
 
 using namespace std;
@@ -19,9 +19,7 @@ void createFile(const string);
 void createFileFromVec(const string, vector<int>);
 
 /********* auxFunction.cpp *********/
-void swap(int&, int&);
 void printVec(vector<int>);
-void random_shuffle(vector<int>&);
 bool fileExists(const char*);
 
 /********* auxFunction.cpp *********/

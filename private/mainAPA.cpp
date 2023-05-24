@@ -35,7 +35,7 @@ vector<int> APA() {
         vec.push_back(i);
 
     for(int  i = 0; i < MAX_REPETITIONS; i++) {
-        random_shuffle(vec);    // shuffle the vector in a random way
+        random_shuffle(vec.begin(), vec.end());    // shuffle the vector in a random way
         nComp.push_back(0);
         LVquicksort(vec, 0, vec.size() - 1, nComp[i]);
     }

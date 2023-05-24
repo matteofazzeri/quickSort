@@ -1,6 +1,6 @@
 #-- Directory names
-OBJ_DIR = object-file
-SRC_DIR = src
+OBJ_DIR = temporary_builds
+SRC_DIR = private
 BIN_DIR = Exported
 
 #-- Path for  files
