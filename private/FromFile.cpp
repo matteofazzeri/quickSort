@@ -79,7 +79,6 @@ void createFileFromVec(const string fileName, vector<int> nComp) {
         myFile << nComp[i];
         myFile << "\n";
     }
-        
 
     // Close the file
     myFile.close();
