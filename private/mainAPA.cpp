@@ -86,6 +86,7 @@ int main(int argc, char *argv[])
     cout << "Valore medio -> " << Vmedio << endl;
     cout << "Deviazione standard empirica -> " << standardEmpiricalDeviation(rep, Vmedio) << endl;
 
+    //run python script to create a png with a graph of the results
     system("python3 Exported/plot.py");
 
     auto duration = duration_cast<seconds>(high_resolution_clock::now() - start);

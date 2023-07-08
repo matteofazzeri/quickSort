@@ -1,0 +1,3 @@
+C:/project/GitHub/quickSort/private/cmake-build-debug/CMakeFiles/private.dir
+C:/project/GitHub/quickSort/private/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/project/GitHub/quickSort/private/cmake-build-debug/CMakeFiles/rebuild_cache.dir
