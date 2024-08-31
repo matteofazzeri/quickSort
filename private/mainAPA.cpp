@@ -14,16 +14,17 @@ double valoreMedio(vector<int> values) {
     return sum / MAX_REPETITIONS;
 }
 
-double standardEmpiricalDeviation(vector<int> values, double mediumValue) {
+double standardEmpiricalDeviation(const std::vector<int>& values, double mediumValue) {
+    long long int sum = 0;  // Usa long long int per gestire numeri più grandi
     
-    long int sum = 0;
-    
-    for(int i = 0; i < MAX_REPETITIONS; i++)
-        sum += pow(values[i]-mediumValue, 2);
+    for(int i = 0; i < values.size(); i++)
+        sum += pow(values[i] - mediumValue, 2);
         
-    return sum / (MAX_REPETITIONS-1);
-
+    double variance = static_cast<double>(sum) / (values.size() - 1);
+    
+    return sqrt(variance);  // Radice quadrata della varianza per ottenere la deviazione standard
 }
+
 
 vector<int> APA() {
     
@@ -41,7 +42,6 @@ vector<int> APA() {
     }
     
     return nComp;
-
 }
 
 int main(int argc, char *argv[])

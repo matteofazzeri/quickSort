@@ -1,6 +1,5 @@
 #include "apa.h"
 
-
 void LVquicksort(vector<int>& v, int low, int high, int& nComp) {
 
     int pIndex=0;   //random pivot position
@@ -37,8 +36,8 @@ int Partition(vector<int>& v, int start, int end, int& nComp) {
 int RandomPivotPartition(vector<int>& v, int low, int high, int& nComp) {
 
     /*
-    *   Swap the random pivot <low + rand()%(high - low + 1)>
-    *   With the last one of the sub-vector
+      * Swap the random pivot <low + rand()%(high - low + 1)>
+      * With the last one of the sub-vector
     */
     swap(v[low + rand()%(high - low + 1)], v[high]);
 

@@ -16,7 +16,5 @@ bins = 50
 plot.hist(nComp, bins, color="white", edgecolor="black")
 plot.gca().set(title='|S|=10^4 , Run=10^5', xlabel='Confronti', ylabel='Run')
 
-
-
 plot.savefig('./Exported/Plot.png')
 plot.close()

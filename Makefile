@@ -17,7 +17,7 @@ SOURCES = $(wildcard $(SRC_PATH)/*.cpp)	#wildcard -> carica variabile con lista 
 OBJECTS_TO_LINK = $(patsubst $(SRC_PATH)/%.cpp, $(OBJ_PATH)/%.o, $(SOURCES))
 
 #----------------------------------------------------------------- 
-all: $(SOURCES) $(OBJECTS_TO_LINK) makefile $(BIN_PATH)/$(APPLICATION_NAME)
+all: $(SOURCES) $(OBJECTS_TO_LINK) Makefile $(BIN_PATH)/$(APPLICATION_NAME)
 
 $(BIN_PATH)/$(APPLICATION_NAME) : $(OBJECTS_TO_LINK)
 	$(CXX) -o $@ $(OBJECTS_TO_LINK)
