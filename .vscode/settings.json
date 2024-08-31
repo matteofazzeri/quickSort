@@ -2,5 +2,6 @@
     "files.associations": {
         "sstream": "cpp"
     },
-    "makefile.configureOnOpen": true
+    "makefile.configureOnOpen": true,
+    "markdown-pdf.math": true
 }

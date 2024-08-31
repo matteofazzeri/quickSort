@@ -61,21 +61,17 @@ Per limitare la probabilità che il numero di confronti $ X_r $ superi un multip
 
 La disuguaglianza di Markov fornisce un limite superiore generale per la probabilità che $ X_r $ sia almeno $ v $ volte il valore medio:
 
-$
-\Pr\{X_r \geq v\hat{\mu}\} \leq \frac{1}{v}
-$
+$$\Pr\{X_r \geq v\hat{\mu}\} \leq \frac{1}{v}$$
 
 #### Disuguaglianza di Chebyshev
 
-Quando conosciamo la varianza $\hat{\sigma}^2$ della distribuzione di $ X_r $, possiamo ottenere un limite superiore più stretto usando la disuguaglianza di Chebyshev:
+Quando conosciamo la varianza ${\hat{\sigma}^2}$ della distribuzione di $ X_r $, possiamo ottenere un limite superiore più stretto usando la disuguaglianza di Chebyshev:
 
-$
-\Pr\{X_r \geq v\hat{\mu}\} \leq \frac{\hat{\sigma}^2}{(v - 1)^2 \hat{\mu}^2}
-$
+$$\Pr\{X_r \geq v\hat{\mu}\} \leq \frac{\hat{\sigma}^2}{(v - 1)^2 \hat{\mu}^2}$$
 
 ### Confronto Empirico
 
-Nel nostro esperimento, possiamo confrontare i limiti teorici forniti dalle disuguaglianze con le frequenze empiriche osservate. Supponiamo di voler calcolare queste probabilità per $ v = 2 $ e $ v = 3 $:
+Nel nostro esperimento, possiamo confrontare i limiti teorici forniti dalle disuguaglianze con le frequenze empiriche osservate. Supponiamo di voler calcolare queste probabilità per $v = 2$ e $v = 3$:
 
 #### Calcolo per $ v = 2 $
 
@@ -90,8 +86,7 @@ Nel nostro esperimento, possiamo confrontare i limiti teorici forniti dalle disu
 #### Frequenze Empiriche
 
 Per confrontare questi limiti teorici con i dati empirici, conta quante volte nelle $ 10^5 $ esecuzioni $ X_r $ ha superato $ 2\hat{\mu} $ e $ 3\hat{\mu} $. Supponiamo che i risultati siano:
-
-- $\Pr\{X_r \geq 2\hat{\mu}\}$ empirico: 0 
+- $\Pr\{X_r \geq 2\hat{\mu}\}$ empirico: 0
 - $\Pr\{X_r \geq 3\hat{\mu}\}$ empirico: 0
 
 Il codice Python per calcolare queste frequenze empiriche è il seguente:
