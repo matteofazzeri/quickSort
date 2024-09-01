@@ -19,14 +19,14 @@ Le funzioni usate per calcolarle sono state:
 double valoreMedio(const std::vector<int>& values) {
     long int sum = 0;
 
-    for(int i = 0; i < values.size(); i++)  // Modificato MAX_REPETITIONS a values.size()
+    for(int i = 0; i < values.size(); i++)
         sum += values[i];
     
     return static_cast<double>(sum) / values.size();  // Cast a double per precisione
 }
 
 double deviazioneStandardEmpirica(const std::vector<int>& values, double valoreMedio) {
-    long long int sum = 0;  // Usa long long int per gestire numeri più grandi
+    long long int sum = 0;
     
     for(int i = 0; i < values.size(); i++)
         sum += pow(values[i] - valoreMedio, 2);
