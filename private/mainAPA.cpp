@@ -4,25 +4,24 @@
 
 using namespace chrono;
 
-double valoreMedio(vector<int> values) {
-    
+double valoreMedio(const std::vector<int>& values) {
     long int sum = 0;
-    
-    for(int i = 0; i < MAX_REPETITIONS; i++)
+
+    for(int i = 0; i < values.size(); i++)
         sum += values[i];
     
-    return sum / MAX_REPETITIONS;
+    return static_cast<double>(sum) / values.size();  // Cast a double per precisione
 }
 
-double standardEmpiricalDeviation(const std::vector<int>& values, double mediumValue) {
-    long long int sum = 0;  // Usa long long int per gestire numeri più grandi
+double deviazioneStandardEmpirica(const std::vector<int>& values, double valoreMedio) {
+    long long int sum = 0;
     
     for(int i = 0; i < values.size(); i++)
-        sum += pow(values[i] - mediumValue, 2);
+        sum += pow(values[i] - valoreMedio, 2);
         
-    double variance = static_cast<double>(sum) / (values.size() - 1);
+    double varianza = static_cast<double>(sum) / (values.size() - 1);
     
-    return sqrt(variance);  // Radice quadrata della varianza per ottenere la deviazione standard
+    return sqrt(varianza);  // Radice quadrata della varianza per ottenere la deviazione standard
 }
 
 
